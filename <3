@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Girlfriend?</title>
+    <style>
+        body {
+            text-align: center;
+            background: url('https://www.transparenttextures.com/patterns/hearts.png');
+            background-color: #ffccdd;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: #ff6699;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .custom-image {
+            width: 400px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 15px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        #yes {
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: #ff6699;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #no {
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #ff6699;
+            border: 2px solid #ff6699;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine? 💖</h1>
+        <img src="https://i.postimg.cc/Hs73bb8T/temp-Image-EN3-Fb-M.avif" alt="Custom Image" class="custom-image">
+        <div class="buttons">
+            <button id="yes" onclick="popConfetti()">Yes</button>
+            <button id="no" onclick="growYes()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function growYes() {
+            let yesButton = document.getElementById('yes');
+            let currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = (currentSize + 10) + 'px';
+        }
+
+        function popConfetti() {
+            confetti({
+                particleCount: 200,
+                spread: 100,
+                origin: { y: 0.6 }
+            });
+        }
+    </script>
+</body>
+</html>
